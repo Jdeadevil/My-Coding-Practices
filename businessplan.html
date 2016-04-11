@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
+<!-- add after bootstrap.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
+    
+<script type="text/javascript">
+    $(document).ready(function(){
+     
+        var cv = $.get("CV_File.html");
+        
+        $("#appendCV").append(cv);
+        
+            function showcv(){                   
+                $("#appendCV").toggle();
+            });
+        
+    });
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>My Business Plan</title>
+</head>
+
+    <style>
+        img {
+            height:200px;
+            display: inline-block;
+        }
+        
+        h1{
+            display: inline-block;
+        }
+    </style>
+    
+<body data-spy="scroll" data-target="#toc">
+    
+
+    
+
+    <div class="container">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> relevant skills and experience  </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> Web Development (HTML, CSS, JS (jQuery, Bootstrap, etc), PHP, mySQL), UX Design, Graphic Design, database administration </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" onclick="showcv">Click here to expand or hide CV</button>
+                        <div id="appendCV"></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
