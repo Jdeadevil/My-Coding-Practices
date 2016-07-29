@@ -1,0 +1,38 @@
+
+function convertToRoman(num) {
+  
+  var answer = [];
+  var diff = "";
+  
+  var rNums = ["M", "D", "C", "L", "X", "V", "I"];
+  var dNums = [1000, 500, 100, 50, 10, 5, 1];
+  
+  num = num.toString().split('');
+  
+  if (num.length == 2) {
+    num[0] += "0";
+  } else if (num.length == 3) {
+    num [0] += "00";
+    num [1] += "0";
+  } else if (num.length == 4) {
+    num [0] += "000";
+    num [1] += "00";
+    num [2] += "0";
+  }
+  
+  for (var i = 0; i < num.length; i++) {
+    for (var j = 0; j < dNums.length; j++) {
+      if (parseInt(num[i]) == dNums[j]) {
+        answer[i] = rNums[j];
+      } else if (parseInt(num[i]) < dNums[j]) {
+        answer[i] = rNums[j+1];
+        diff = parseInt(num[i]) - dNums[j+1];
+        break;
+      }
+    }
+  }
+  
+  return parseInt(num[0]);
+}
+
+convertToRoman(755);
